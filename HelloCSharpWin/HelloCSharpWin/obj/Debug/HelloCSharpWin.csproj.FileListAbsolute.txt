@@ -7,3 +7,14 @@ D:\CSharpPractice\HelloCSharpWin\HelloCSharpWin\obj\Debug\HelloCSharpWin.Propert
 D:\CSharpPractice\HelloCSharpWin\HelloCSharpWin\obj\Debug\HelloCSharpWin.csproj.GenerateResource.Cache
 D:\CSharpPractice\HelloCSharpWin\HelloCSharpWin\obj\Debug\HelloCSharpWin.exe
 D:\CSharpPractice\HelloCSharpWin\HelloCSharpWin\obj\Debug\HelloCSharpWin.pdb
+D:\CSharpPractice\yooo-mean-practiceCSharp\HelloCSharpWin\HelloCSharpWin\bin\Debug\HelloCSharpWin.exe.config
+D:\CSharpPractice\yooo-mean-practiceCSharp\HelloCSharpWin\HelloCSharpWin\bin\Debug\HelloCSharpWin.exe
+D:\CSharpPractice\yooo-mean-practiceCSharp\HelloCSharpWin\HelloCSharpWin\bin\Debug\HelloCSharpWin.pdb
+D:\CSharpPractice\yooo-mean-practiceCSharp\HelloCSharpWin\HelloCSharpWin\obj\Debug\HelloCSharpWin.csproj.AssemblyReference.cache
+D:\CSharpPractice\yooo-mean-practiceCSharp\HelloCSharpWin\HelloCSharpWin\obj\Debug\HelloCSharpWin.csproj.SuggestedBindingRedirects.cache
+D:\CSharpPractice\yooo-mean-practiceCSharp\HelloCSharpWin\HelloCSharpWin\obj\Debug\HelloCSharpWin.Calculator.resources
+D:\CSharpPractice\yooo-mean-practiceCSharp\HelloCSharpWin\HelloCSharpWin\obj\Debug\HelloCSharpWin.Properties.Resources.resources
+D:\CSharpPractice\yooo-mean-practiceCSharp\HelloCSharpWin\HelloCSharpWin\obj\Debug\HelloCSharpWin.csproj.GenerateResource.cache
+D:\CSharpPractice\yooo-mean-practiceCSharp\HelloCSharpWin\HelloCSharpWin\obj\Debug\HelloCSharpWin.csproj.CoreCompileInputs.cache
+D:\CSharpPractice\yooo-mean-practiceCSharp\HelloCSharpWin\HelloCSharpWin\obj\Debug\HelloCSharpWin.exe
+D:\CSharpPractice\yooo-mean-practiceCSharp\HelloCSharpWin\HelloCSharpWin\obj\Debug\HelloCSharpWin.pdb

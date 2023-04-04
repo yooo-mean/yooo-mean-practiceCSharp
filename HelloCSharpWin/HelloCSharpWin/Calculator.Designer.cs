@@ -46,10 +46,10 @@
             // 
             this.HelloLabel.AutoSize = true;
             this.HelloLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.HelloLabel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.HelloLabel.Location = new System.Drawing.Point(58, 119);
+            this.HelloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.HelloLabel.Location = new System.Drawing.Point(77, 119);
             this.HelloLabel.Name = "HelloLabel";
-            this.HelloLabel.Size = new System.Drawing.Size(256, 28);
+            this.HelloLabel.Size = new System.Drawing.Size(237, 29);
             this.HelloLabel.TabIndex = 0;
             this.HelloLabel.Text = "계산기 사용하려면 클릭";
             this.HelloLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HelloLabel_MouseDown);
