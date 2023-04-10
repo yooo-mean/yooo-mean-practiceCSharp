@@ -36,7 +36,7 @@ namespace HelloCSharpWin
          */
 
 
-        //연산 담당 메소드, 매개변수는 실수형
+        //연산 담당 메소드, 매개변수는 정수형
         public int CalcResult(int opA, int opB, string oper)
         {
             //부호에 따른 연산, 정수형 반환
@@ -44,9 +44,23 @@ namespace HelloCSharpWin
             {
                 case "+": return opA + opB;
                 case "-": return opA - opB;
-                case "*": return opA * opB;
-                case "/": return opA / opB;
+                case "*": return opA - opB;
                 case "%": return opA % opB;
+            }
+            return 0;
+        }
+
+        //메소드 오버로딩 : 실수형 연산
+        public double CalcResult(double opA, double opB, string oper)
+        {
+            //부호에 따른 연산, 정수형 반환
+            switch (oper)
+            {
+                case "+": return Math.Round((opA + opB), 2);
+                case "-": return Math.Round((opA - opB), 2);
+                case "*": return Math.Round((opA * opB), 2);
+                case "/": return Math.Round((opA / opB), 2);
+                case "%": return Math.Round((opA % opB), 2);
             }
             return 0;
         }
@@ -72,33 +86,64 @@ namespace HelloCSharpWin
 
         private void btnPlus_MouseDown(object sender, MouseEventArgs e)
         {
-            //연산 담당 메소드에 피연산자와 부호 전달, 결과 텍스트 박스에 결과값 출력
-            int result = CalcResult(Int32.Parse(tbxOperendA.Text), Int32.Parse(tbxOperendB.Text), btnPlus.Text);
-            tbxResult.Text = result.ToString();
+            if(tbxOperendA.Text.Contains(".") || tbxOperendB.Text.Contains("."))
+            {
+                double result = CalcResult(Double.Parse(tbxOperendA.Text), Double.Parse(tbxOperendB.Text), (sender as Button).Text);
+                tbxResult.Text = result.ToString();
+            }
+            else
+            {
+                int result = CalcResult(Int32.Parse(tbxOperendA.Text), Int32.Parse(tbxOperendB.Text), (sender as Button).Text);
+                tbxResult.Text = result.ToString();
+            }
         }
 
         private void btnMinus_MouseDown(object sender, MouseEventArgs e)
         {
-            int result = CalcResult(Int32.Parse(tbxOperendA.Text), Int32.Parse(tbxOperendB.Text), btnMinus.Text);
-            tbxResult.Text = result.ToString();
+            if (tbxOperendA.Text.Contains(".") || tbxOperendB.Text.Contains("."))
+            {
+                double result = CalcResult(Double.Parse(tbxOperendA.Text), Double.Parse(tbxOperendB.Text), (sender as Button).Text);
+                tbxResult.Text = result.ToString();
+            }
+            else
+            {
+                int result = CalcResult(Int32.Parse(tbxOperendA.Text), Int32.Parse(tbxOperendB.Text), (sender as Button).Text);
+                tbxResult.Text = result.ToString();
+            }
         }
 
         private void btnMultiply_MouseDown(object sender, MouseEventArgs e)
         {
-            int result = CalcResult(Int32.Parse(tbxOperendA.Text), Int32.Parse(tbxOperendB.Text), btnMultiply.Text);
-            tbxResult.Text = result.ToString();
+            if (tbxOperendA.Text.Contains(".") || tbxOperendB.Text.Contains("."))
+            {
+                double result = CalcResult(Double.Parse(tbxOperendA.Text), Double.Parse(tbxOperendB.Text), (sender as Button).Text);
+                tbxResult.Text = result.ToString();
+            }
+            else
+            {
+                int result = CalcResult(Int32.Parse(tbxOperendA.Text), Int32.Parse(tbxOperendB.Text), (sender as Button).Text);
+                tbxResult.Text = result.ToString();
+            }
         }
 
         private void btnDivide_MouseDown(object sender, MouseEventArgs e)
         {
-            float result = CalcResult(Int32.Parse(tbxOperendA.Text), Int32.Parse(tbxOperendB.Text), btnDivide.Text);
+            double result = CalcResult(Double.Parse(tbxOperendA.Text), Double.Parse(tbxOperendB.Text), (sender as Button).Text);
             tbxResult.Text = result.ToString();
         }
 
         private void btnRest_MouseDown(object sender, MouseEventArgs e)
         {
-            int result = CalcResult(Int32.Parse(tbxOperendA.Text), Int32.Parse(tbxOperendB.Text), btnRest.Text);
-            tbxResult.Text = result.ToString();
+            if (tbxOperendA.Text.Contains(".") || tbxOperendB.Text.Contains("."))
+            {
+                double result = CalcResult(Double.Parse(tbxOperendA.Text), Double.Parse(tbxOperendB.Text), (sender as Button).Text);
+                tbxResult.Text = result.ToString();
+            }
+            else
+            {
+                int result = CalcResult(Int32.Parse(tbxOperendA.Text), Int32.Parse(tbxOperendB.Text), (sender as Button).Text);
+                tbxResult.Text = result.ToString();
+            }
         }
     }
 }
