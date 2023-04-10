@@ -12,8 +12,6 @@ namespace HelloCSharpWin
 {
     public partial class Calculator : Form
     {
-        //validation 체크용
-        int numCheck; double dNumChk;
         public Calculator()
         {
             InitializeComponent();
@@ -21,6 +19,8 @@ namespace HelloCSharpWin
 
         public bool ChkValidation()
         {
+            //validation 체크용
+            int numCheck; double dNumChk;
             //유효값 검사 validation
             if (String.IsNullOrWhiteSpace(tbxOperendA.Text))
             {
