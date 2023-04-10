@@ -19,10 +19,41 @@ namespace HelloCSharpWin
             InitializeComponent();
         }
 
+        public bool ChkValidation()
+        {
+            //유효값 검사 validation
+            if (String.IsNullOrWhiteSpace(tbxOperendA.Text))
+            {
+                MessageBox.Show("피연산자 A 항에 숫자를 입력해주세요.");
+                tbxOperendA.Focus();
+                return false;
+            }
+            if (String.IsNullOrWhiteSpace(tbxOperendB.Text))
+            {
+                MessageBox.Show("피연산자 B 항에 숫자를 입력해주세요.");
+                tbxOperendB.Focus();
+                return false;
+            }
+            if (int.TryParse(tbxOperendA.Text, out numCheck) == false && double.TryParse(tbxOperendA.Text, out dNumChk) == false)
+            {
+                MessageBox.Show("피연산자 A 항에 문자열이 입력됐어요. 숫자를 입력해주세요.");
+                tbxOperendA.Focus(); tbxOperendA.SelectAll();
+                return false;
+            }
+            if (int.TryParse(tbxOperendB.Text, out numCheck) == false && double.TryParse(tbxOperendB.Text, out dNumChk) == false)
+            {
+                MessageBox.Show("피연산자 B 항에 문자열이 입력됐어요. 숫자를 입력해주세요.");
+                tbxOperendB.Focus(); tbxOperendB.SelectAll();
+                return false;
+            }
+            return true;
+        }
+
         //연산 담당 메소드, 매개변수는 정수형
         public int CalcResult(int opA, int opB, string oper)
         {
             //부호에 따른 연산, 정수형 반환
+            //나눗셈은 정수/정수의 경우에도 실수가 반환될 수 있으므로 double형으로 통일.
             switch (oper)
             {
                 case "+": return opA + opB;
@@ -69,30 +100,13 @@ namespace HelloCSharpWin
 
         private void btnPlus_MouseDown(object sender, MouseEventArgs e)
         {
-            //유효값 검사
-            if (String.IsNullOrWhiteSpace(tbxOperendA.Text))
+            //유효성 검사 호출
+            while (true)
             {
-                MessageBox.Show("피연산자 A 항에 숫자를 입력해주세요.");
-                tbxOperendA.Focus();
-                return;
-            }
-            if (String.IsNullOrWhiteSpace(tbxOperendB.Text))
-            {
-                MessageBox.Show("피연산자 B 항에 숫자를 입력해주세요.");
-                tbxOperendB.Focus();
-                return;
-            }
-            if (int.TryParse(tbxOperendA.Text, out numCheck) == false && double.TryParse(tbxOperendA.Text, out dNumChk) == false)
-            {
-                MessageBox.Show("피연산자 A 항에 문자열이 입력됐어요. 숫자를 입력해주세요.");
-                tbxOperendA.Focus(); tbxOperendA.SelectAll();
-                return;
-            }
-            if (int.TryParse(tbxOperendB.Text, out numCheck) == false && double.TryParse(tbxOperendB.Text, out dNumChk) == false)
-            {
-                MessageBox.Show("피연산자 B 항에 문자열이 입력됐어요. 숫자를 입력해주세요.");
-                tbxOperendB.Focus(); tbxOperendB.SelectAll();
-                return;
+                //유효성 검사 통과 시 아래 if문으로 이동
+                if (ChkValidation()) break;
+                //유효성 검사 실패 시 아예 이벤트 문 밖으로 이동. 아래 if문에 걸리지 않음.
+                else return;
             }
             //피연산자에 . 포함 시 실수 연산 메소드 호출
             if (tbxOperendA.Text.Contains(".") || tbxOperendB.Text.Contains("."))
@@ -110,29 +124,10 @@ namespace HelloCSharpWin
 
         private void btnMinus_MouseDown(object sender, MouseEventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(tbxOperendA.Text))
+            while (true)
             {
-                MessageBox.Show("피연산자 A 항에 숫자를 입력해주세요.");
-                tbxOperendA.Focus();
-                return;
-            }
-            if (String.IsNullOrWhiteSpace(tbxOperendB.Text))
-            {
-                MessageBox.Show("피연산자 B 항에 숫자를 입력해주세요.");
-                tbxOperendB.Focus();
-                return;
-            }
-            if (int.TryParse(tbxOperendA.Text, out numCheck) == false && double.TryParse(tbxOperendA.Text, out dNumChk) == false)
-            {
-                MessageBox.Show("피연산자 A 항에 문자열이 입력됐어요. 숫자를 입력해주세요.");
-                tbxOperendA.Focus(); tbxOperendA.SelectAll();
-                return;
-            }
-            if (int.TryParse(tbxOperendB.Text, out numCheck) == false && double.TryParse(tbxOperendB.Text, out dNumChk) == false)
-            {
-                MessageBox.Show("피연산자 B 항에 문자열이 입력됐어요. 숫자를 입력해주세요.");
-                tbxOperendB.Focus(); tbxOperendB.SelectAll();
-                return;
+                if (ChkValidation()) break;
+                else return;
             }
             if (tbxOperendA.Text.Contains(".") || tbxOperendB.Text.Contains("."))
             {
@@ -148,29 +143,10 @@ namespace HelloCSharpWin
 
         private void btnMultiply_MouseDown(object sender, MouseEventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(tbxOperendA.Text))
+            while (true)
             {
-                MessageBox.Show("피연산자 A 항에 숫자를 입력해주세요.");
-                tbxOperendA.Focus();
-                return;
-            }
-            if (String.IsNullOrWhiteSpace(tbxOperendB.Text))
-            {
-                MessageBox.Show("피연산자 B 항에 숫자를 입력해주세요.");
-                tbxOperendB.Focus();
-                return;
-            }
-            if (int.TryParse(tbxOperendA.Text, out numCheck) == false && double.TryParse(tbxOperendA.Text, out dNumChk) == false)
-            {
-                MessageBox.Show("피연산자 A 항에 문자열이 입력됐어요. 숫자를 입력해주세요.");
-                tbxOperendA.Focus(); tbxOperendA.SelectAll();
-                return;
-            }
-            if (int.TryParse(tbxOperendB.Text, out numCheck) == false && double.TryParse(tbxOperendB.Text, out dNumChk) == false)
-            {
-                MessageBox.Show("피연산자 B 항에 문자열이 입력됐어요. 숫자를 입력해주세요.");
-                tbxOperendB.Focus(); tbxOperendB.SelectAll();
-                return;
+                if (ChkValidation()) break;
+                else return;
             }
             if (tbxOperendA.Text.Contains(".") || tbxOperendB.Text.Contains("."))
             {
@@ -186,29 +162,10 @@ namespace HelloCSharpWin
 
         private void btnDivide_MouseDown(object sender, MouseEventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(tbxOperendA.Text))
+            while (true)
             {
-                MessageBox.Show("피연산자 A 항에 숫자를 입력해주세요.");
-                tbxOperendA.Focus();
-                return;
-            }
-            if (String.IsNullOrWhiteSpace(tbxOperendB.Text))
-            {
-                MessageBox.Show("피연산자 B 항에 숫자를 입력해주세요.");
-                tbxOperendB.Focus();
-                return;
-            }
-            if (int.TryParse(tbxOperendA.Text, out numCheck) == false && double.TryParse(tbxOperendA.Text, out dNumChk) == false)
-            {
-                MessageBox.Show("피연산자 A 항에 문자열이 입력됐어요. 숫자를 입력해주세요.");
-                tbxOperendA.Focus(); tbxOperendA.SelectAll();
-                return;
-            }
-            if (int.TryParse(tbxOperendB.Text, out numCheck) == false && double.TryParse(tbxOperendB.Text, out dNumChk) == false)
-            {
-                MessageBox.Show("피연산자 B 항에 문자열이 입력됐어요. 숫자를 입력해주세요.");
-                tbxOperendB.Focus(); tbxOperendB.SelectAll();
-                return;
+                if (ChkValidation()) break;
+                else return;
             }
             //나눗셈은 정수형끼리 나누어도 소수가 나올 수 있으므로 실수형으로만 처리
             double result = CalcResult(Double.Parse(tbxOperendA.Text), Double.Parse(tbxOperendB.Text), (sender as Button).Text);
@@ -217,29 +174,10 @@ namespace HelloCSharpWin
 
         private void btnRest_MouseDown(object sender, MouseEventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(tbxOperendA.Text))
+            while (true)
             {
-                MessageBox.Show("피연산자 A 항에 숫자를 입력해주세요.");
-                tbxOperendA.Focus();
-                return;
-            }
-            if (String.IsNullOrWhiteSpace(tbxOperendB.Text))
-            {
-                MessageBox.Show("피연산자 B 항에 숫자를 입력해주세요.");
-                tbxOperendB.Focus();
-                return;
-            }
-            if (int.TryParse(tbxOperendA.Text, out numCheck) == false && double.TryParse(tbxOperendA.Text, out dNumChk) == false)
-            {
-                MessageBox.Show("피연산자 A 항에 문자열이 입력됐어요. 숫자를 입력해주세요.");
-                tbxOperendA.Focus(); tbxOperendA.SelectAll();
-                return;
-            }
-            if (int.TryParse(tbxOperendB.Text, out numCheck) == false && double.TryParse(tbxOperendB.Text, out dNumChk) == false)
-            {
-                MessageBox.Show("피연산자 B 항에 문자열이 입력됐어요. 숫자를 입력해주세요.");
-                tbxOperendB.Focus(); tbxOperendB.SelectAll();
-                return;
+                if (ChkValidation()) break;
+                else return;
             }
             if (tbxOperendA.Text.Contains(".") || tbxOperendB.Text.Contains("."))
             {
@@ -254,4 +192,3 @@ namespace HelloCSharpWin
         }
     }
 }
-
