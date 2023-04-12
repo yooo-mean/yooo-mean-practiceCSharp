@@ -8,6 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+/*
+ * To Do 
+ * 진짜 계산기처럼 만들기
+ * 
+ * 첫번째 숫자 입력 - 기호 버튼 클릭 - 두번째 숫자 입력 - 기호 버튼 클릭 - 두 수의 합을 첫번째 숫자에 연산 - 세번째 숫자 입력 - 두번째 숫자에 입력
+ * 무한 반복의 로직
+ * */
+
 namespace HelloCSharpWin
 {
     public partial class Calculator : Form
