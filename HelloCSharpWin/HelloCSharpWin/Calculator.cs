@@ -101,13 +101,7 @@ namespace HelloCSharpWin
         private void btnPlus_MouseDown(object sender, MouseEventArgs e)
         {
             //유효성 검사 호출
-            while (true)
-            {
-                //유효성 검사 통과 시 아래 if문으로 이동
-                if (ChkValidation()) break;
-                //유효성 검사 실패 시 아예 이벤트 문 밖으로 이동. 아래 if문에 걸리지 않음.
-                else return;
-            }
+            if (ChkValidation() == false) return;
             //피연산자에 . 포함 시 실수 연산 메소드 호출
             if (tbxOperendA.Text.Contains(".") || tbxOperendB.Text.Contains("."))
             {
@@ -124,11 +118,7 @@ namespace HelloCSharpWin
 
         private void btnMinus_MouseDown(object sender, MouseEventArgs e)
         {
-            while (true)
-            {
-                if (ChkValidation()) break;
-                else return;
-            }
+            if (ChkValidation() == false) return;
             if (tbxOperendA.Text.Contains(".") || tbxOperendB.Text.Contains("."))
             {
                 double result = CalcResult(Double.Parse(tbxOperendA.Text), Double.Parse(tbxOperendB.Text), (sender as Button).Text);
@@ -143,11 +133,7 @@ namespace HelloCSharpWin
 
         private void btnMultiply_MouseDown(object sender, MouseEventArgs e)
         {
-            while (true)
-            {
-                if (ChkValidation()) break;
-                else return;
-            }
+            if (ChkValidation() == false) return;
             if (tbxOperendA.Text.Contains(".") || tbxOperendB.Text.Contains("."))
             {
                 double result = CalcResult(Double.Parse(tbxOperendA.Text), Double.Parse(tbxOperendB.Text), (sender as Button).Text);
@@ -162,11 +148,7 @@ namespace HelloCSharpWin
 
         private void btnDivide_MouseDown(object sender, MouseEventArgs e)
         {
-            while (true)
-            {
-                if (ChkValidation()) break;
-                else return;
-            }
+            if (ChkValidation() == false) return;
             //나눗셈은 정수형끼리 나누어도 소수가 나올 수 있으므로 실수형으로만 처리
             double result = CalcResult(Double.Parse(tbxOperendA.Text), Double.Parse(tbxOperendB.Text), (sender as Button).Text);
             tbxResult.Text = result.ToString();
@@ -174,11 +156,7 @@ namespace HelloCSharpWin
 
         private void btnRest_MouseDown(object sender, MouseEventArgs e)
         {
-            while (true)
-            {
-                if (ChkValidation()) break;
-                else return;
-            }
+            if (ChkValidation() == false) return;
             if (tbxOperendA.Text.Contains(".") || tbxOperendB.Text.Contains("."))
             {
                 double result = CalcResult(Double.Parse(tbxOperendA.Text), Double.Parse(tbxOperendB.Text), (sender as Button).Text);
