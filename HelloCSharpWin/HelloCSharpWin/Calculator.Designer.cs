@@ -29,17 +29,13 @@
         private void InitializeComponent()
         {
             this.HelloLabel = new System.Windows.Forms.Label();
-            this.lblOperendA = new System.Windows.Forms.Label();
-            this.lblOperendB = new System.Windows.Forms.Label();
-            this.lblResult = new System.Windows.Forms.Label();
-            this.tbxOperendA = new System.Windows.Forms.TextBox();
-            this.tbxOperendB = new System.Windows.Forms.TextBox();
-            this.tbxResult = new System.Windows.Forms.TextBox();
+            this.tbxOperend = new System.Windows.Forms.TextBox();
             this.btnPlus = new System.Windows.Forms.Button();
             this.btnMinus = new System.Windows.Forms.Button();
             this.btnMultiply = new System.Windows.Forms.Button();
             this.btnDivide = new System.Windows.Forms.Button();
             this.btnRest = new System.Windows.Forms.Button();
+            this.btnResult = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // HelloLabel
@@ -54,66 +50,23 @@
             this.HelloLabel.Text = "계산기 사용하려면 클릭";
             this.HelloLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HelloLabel_MouseDown);
             // 
-            // lblOperendA
+            // tbxOperend
             // 
-            this.lblOperendA.AutoSize = true;
-            this.lblOperendA.Location = new System.Drawing.Point(53, 31);
-            this.lblOperendA.Name = "lblOperendA";
-            this.lblOperendA.Size = new System.Drawing.Size(76, 15);
-            this.lblOperendA.TabIndex = 1;
-            this.lblOperendA.Text = "피연산자A";
-            this.lblOperendA.Visible = false;
-            // 
-            // lblOperendB
-            // 
-            this.lblOperendB.AutoSize = true;
-            this.lblOperendB.Location = new System.Drawing.Point(53, 94);
-            this.lblOperendB.Name = "lblOperendB";
-            this.lblOperendB.Size = new System.Drawing.Size(77, 15);
-            this.lblOperendB.TabIndex = 2;
-            this.lblOperendB.Text = "피연산자B";
-            this.lblOperendB.Visible = false;
-            // 
-            // lblResult
-            // 
-            this.lblResult.AutoSize = true;
-            this.lblResult.Location = new System.Drawing.Point(53, 235);
-            this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(42, 15);
-            this.lblResult.TabIndex = 3;
-            this.lblResult.Text = "결 과";
-            this.lblResult.Visible = false;
-            // 
-            // tbxOperendA
-            // 
-            this.tbxOperendA.Location = new System.Drawing.Point(142, 28);
-            this.tbxOperendA.Name = "tbxOperendA";
-            this.tbxOperendA.Size = new System.Drawing.Size(172, 25);
-            this.tbxOperendA.TabIndex = 4;
-            this.tbxOperendA.Visible = false;
-            // 
-            // tbxOperendB
-            // 
-            this.tbxOperendB.Location = new System.Drawing.Point(142, 91);
-            this.tbxOperendB.Name = "tbxOperendB";
-            this.tbxOperendB.Size = new System.Drawing.Size(172, 25);
-            this.tbxOperendB.TabIndex = 5;
-            this.tbxOperendB.Visible = false;
-            // 
-            // tbxResult
-            // 
-            this.tbxResult.Location = new System.Drawing.Point(142, 232);
-            this.tbxResult.Name = "tbxResult";
-            this.tbxResult.Size = new System.Drawing.Size(172, 25);
-            this.tbxResult.TabIndex = 6;
-            this.tbxResult.Visible = false;
+            this.tbxOperend.Font = new System.Drawing.Font("맑은 고딕", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbxOperend.Location = new System.Drawing.Point(38, 28);
+            this.tbxOperend.Name = "tbxOperend";
+            this.tbxOperend.Size = new System.Drawing.Size(300, 43);
+            this.tbxOperend.TabIndex = 4;
+            this.tbxOperend.Visible = false;
             // 
             // btnPlus
             // 
             this.btnPlus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPlus.Location = new System.Drawing.Point(63, 169);
+            this.btnPlus.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold);
+            this.btnPlus.Location = new System.Drawing.Point(38, 113);
             this.btnPlus.Name = "btnPlus";
-            this.btnPlus.Size = new System.Drawing.Size(23, 23);
+            this.btnPlus.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnPlus.Size = new System.Drawing.Size(35, 35);
             this.btnPlus.TabIndex = 7;
             this.btnPlus.Text = "+";
             this.btnPlus.UseVisualStyleBackColor = true;
@@ -123,9 +76,10 @@
             // btnMinus
             // 
             this.btnMinus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinus.Location = new System.Drawing.Point(120, 169);
+            this.btnMinus.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold);
+            this.btnMinus.Location = new System.Drawing.Point(104, 113);
             this.btnMinus.Name = "btnMinus";
-            this.btnMinus.Size = new System.Drawing.Size(23, 23);
+            this.btnMinus.Size = new System.Drawing.Size(35, 35);
             this.btnMinus.TabIndex = 8;
             this.btnMinus.Text = "-";
             this.btnMinus.UseVisualStyleBackColor = true;
@@ -135,9 +89,10 @@
             // btnMultiply
             // 
             this.btnMultiply.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMultiply.Location = new System.Drawing.Point(177, 169);
+            this.btnMultiply.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold);
+            this.btnMultiply.Location = new System.Drawing.Point(170, 113);
             this.btnMultiply.Name = "btnMultiply";
-            this.btnMultiply.Size = new System.Drawing.Size(23, 23);
+            this.btnMultiply.Size = new System.Drawing.Size(35, 35);
             this.btnMultiply.TabIndex = 9;
             this.btnMultiply.Text = "*";
             this.btnMultiply.UseVisualStyleBackColor = true;
@@ -147,9 +102,10 @@
             // btnDivide
             // 
             this.btnDivide.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDivide.Location = new System.Drawing.Point(234, 169);
+            this.btnDivide.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold);
+            this.btnDivide.Location = new System.Drawing.Point(236, 113);
             this.btnDivide.Name = "btnDivide";
-            this.btnDivide.Size = new System.Drawing.Size(23, 23);
+            this.btnDivide.Size = new System.Drawing.Size(35, 35);
             this.btnDivide.TabIndex = 10;
             this.btnDivide.Text = "/";
             this.btnDivide.UseVisualStyleBackColor = true;
@@ -159,31 +115,42 @@
             // btnRest
             // 
             this.btnRest.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRest.Location = new System.Drawing.Point(291, 169);
+            this.btnRest.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold);
+            this.btnRest.Location = new System.Drawing.Point(302, 113);
             this.btnRest.Name = "btnRest";
-            this.btnRest.Size = new System.Drawing.Size(23, 23);
+            this.btnRest.Size = new System.Drawing.Size(35, 35);
             this.btnRest.TabIndex = 11;
             this.btnRest.Text = "%";
             this.btnRest.UseVisualStyleBackColor = true;
             this.btnRest.Visible = false;
             this.btnRest.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnRest_MouseDown);
             // 
+            // btnResult
+            // 
+            this.btnResult.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnResult.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Bold);
+            this.btnResult.Location = new System.Drawing.Point(38, 189);
+            this.btnResult.Name = "btnResult";
+            this.btnResult.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnResult.Size = new System.Drawing.Size(300, 35);
+            this.btnResult.TabIndex = 12;
+            this.btnResult.Text = "=";
+            this.btnResult.UseVisualStyleBackColor = true;
+            this.btnResult.Visible = false;
+            this.btnResult.Click += new System.EventHandler(this.btnResult_Click);
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 293);
+            this.ClientSize = new System.Drawing.Size(369, 272);
+            this.Controls.Add(this.btnResult);
             this.Controls.Add(this.btnRest);
             this.Controls.Add(this.btnDivide);
             this.Controls.Add(this.btnMultiply);
             this.Controls.Add(this.btnMinus);
             this.Controls.Add(this.btnPlus);
-            this.Controls.Add(this.tbxResult);
-            this.Controls.Add(this.tbxOperendB);
-            this.Controls.Add(this.tbxOperendA);
-            this.Controls.Add(this.lblResult);
-            this.Controls.Add(this.lblOperendB);
-            this.Controls.Add(this.lblOperendA);
+            this.Controls.Add(this.tbxOperend);
             this.Controls.Add(this.HelloLabel);
             this.Name = "Calculator";
             this.ResumeLayout(false);
@@ -194,17 +161,13 @@
         #endregion
 
         private System.Windows.Forms.Label HelloLabel;
-        private System.Windows.Forms.Label lblOperendA;
-        private System.Windows.Forms.Label lblOperendB;
-        private System.Windows.Forms.Label lblResult;
-        private System.Windows.Forms.TextBox tbxOperendA;
-        private System.Windows.Forms.TextBox tbxOperendB;
-        private System.Windows.Forms.TextBox tbxResult;
+        private System.Windows.Forms.TextBox tbxOperend;
         private System.Windows.Forms.Button btnPlus;
         private System.Windows.Forms.Button btnMinus;
         private System.Windows.Forms.Button btnMultiply;
         private System.Windows.Forms.Button btnDivide;
         private System.Windows.Forms.Button btnRest;
+        private System.Windows.Forms.Button btnResult;
     }
 }
 

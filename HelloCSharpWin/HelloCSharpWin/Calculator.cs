@@ -31,28 +31,16 @@ namespace HelloCSharpWin
             //validation 체크용
             int numCheck; double dNumChk;
             //유효값 검사 validation
-            if (String.IsNullOrWhiteSpace(tbxOperendA.Text))
+            if (String.IsNullOrWhiteSpace(tbxOperend.Text))
             {
                 MessageBox.Show("피연산자 A 항에 숫자를 입력해주세요.");
-                tbxOperendA.Focus();
+                tbxOperend.Focus();
                 return false;
             }
-            if (String.IsNullOrWhiteSpace(tbxOperendB.Text))
-            {
-                MessageBox.Show("피연산자 B 항에 숫자를 입력해주세요.");
-                tbxOperendB.Focus();
-                return false;
-            }
-            if (int.TryParse(tbxOperendA.Text, out numCheck) == false && double.TryParse(tbxOperendA.Text, out dNumChk) == false)
+            if (int.TryParse(tbxOperend.Text, out numCheck) == false && double.TryParse(tbxOperend.Text, out dNumChk) == false)
             {
                 MessageBox.Show("피연산자 A 항에 문자열이 입력됐어요. 숫자를 입력해주세요.");
-                tbxOperendA.Focus(); tbxOperendA.SelectAll();
-                return false;
-            }
-            if (int.TryParse(tbxOperendB.Text, out numCheck) == false && double.TryParse(tbxOperendB.Text, out dNumChk) == false)
-            {
-                MessageBox.Show("피연산자 B 항에 문자열이 입력됐어요. 숫자를 입력해주세요.");
-                tbxOperendB.Focus(); tbxOperendB.SelectAll();
+                tbxOperend.Focus(); tbxOperend.SelectAll();
                 return false;
             }
             return true;
@@ -94,88 +82,43 @@ namespace HelloCSharpWin
             HelloLabel.Visible = false;
             //보이지 않던 계산기 등장
             this.Text = "계산기";
-            lblOperendA.Visible = true;
-            lblOperendB.Visible = true;
-            lblResult.Visible = true;
             btnDivide.Visible = true;
             btnMultiply.Visible = true;
             btnPlus.Visible = true;
             btnMinus.Visible = true;
             btnRest.Visible = true;
-            tbxOperendA.Visible = true;
-            tbxOperendB.Visible = true;
-            tbxResult.Visible = true;
+            tbxOperend.Visible = true;
+            btnResult.Visible = true;
         }
 
         private void btnPlus_MouseDown(object sender, MouseEventArgs e)
         {
-            //유효성 검사 호출
-            if (ChkValidation() == false) return;
-            //피연산자에 . 포함 시 실수 연산 메소드 호출
-            if (tbxOperendA.Text.Contains(".") || tbxOperendB.Text.Contains("."))
-            {
-                double result = CalcResult(Double.Parse(tbxOperendA.Text), Double.Parse(tbxOperendB.Text), (sender as Button).Text);
-                tbxResult.Text = result.ToString();
-            }
-            //피연산자에 . 포함되지 않을 시 정수 연산 메소드 호출
-            else
-            {
-                int result = CalcResult(Int32.Parse(tbxOperendA.Text), Int32.Parse(tbxOperendB.Text), (sender as Button).Text);
-                tbxResult.Text = result.ToString();
-            }
+
         }
 
         private void btnMinus_MouseDown(object sender, MouseEventArgs e)
         {
-            if (ChkValidation() == false) return;
-            if (tbxOperendA.Text.Contains(".") || tbxOperendB.Text.Contains("."))
-            {
-                double result = CalcResult(Double.Parse(tbxOperendA.Text), Double.Parse(tbxOperendB.Text), (sender as Button).Text);
-                tbxResult.Text = result.ToString();
-            }
-            else
-            {
-                int result = CalcResult(Int32.Parse(tbxOperendA.Text), Int32.Parse(tbxOperendB.Text), (sender as Button).Text);
-                tbxResult.Text = result.ToString();
-            }
+
         }
 
         private void btnMultiply_MouseDown(object sender, MouseEventArgs e)
         {
-            if (ChkValidation() == false) return;
-            if (tbxOperendA.Text.Contains(".") || tbxOperendB.Text.Contains("."))
-            {
-                double result = CalcResult(Double.Parse(tbxOperendA.Text), Double.Parse(tbxOperendB.Text), (sender as Button).Text);
-                tbxResult.Text = result.ToString();
-            }
-            else
-            {
-                int result = CalcResult(Int32.Parse(tbxOperendA.Text), Int32.Parse(tbxOperendB.Text), (sender as Button).Text);
-                tbxResult.Text = result.ToString();
-            }
+
         }
 
         private void btnDivide_MouseDown(object sender, MouseEventArgs e)
         {
-            if (ChkValidation() == false) return;
-            //나눗셈은 정수형끼리 나누어도 소수가 나올 수 있으므로 실수형으로만 처리
-            double result = CalcResult(Double.Parse(tbxOperendA.Text), Double.Parse(tbxOperendB.Text), (sender as Button).Text);
-            tbxResult.Text = result.ToString();
+
         }
 
         private void btnRest_MouseDown(object sender, MouseEventArgs e)
         {
-            if (ChkValidation() == false) return;
-            if (tbxOperendA.Text.Contains(".") || tbxOperendB.Text.Contains("."))
-            {
-                double result = CalcResult(Double.Parse(tbxOperendA.Text), Double.Parse(tbxOperendB.Text), (sender as Button).Text);
-                tbxResult.Text = result.ToString();
-            }
-            else
-            {
-                int result = CalcResult(Int32.Parse(tbxOperendA.Text), Int32.Parse(tbxOperendB.Text), (sender as Button).Text);
-                tbxResult.Text = result.ToString();
-            }
+
+        }
+
+        private void btnResult_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
